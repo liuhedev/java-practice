@@ -24,22 +24,30 @@ public class ListError {
         list.add(new String("cc"));
         list.add("dd");
 
-       // test0 无异常
-        for (int i = list.size()-1;i>=0;i--){
-            if (list.get(i)== "cc" || list.get(i) == "bb") {
-                list.remove(list.get(i));
+        // test1.1 无异常 使用倒序查找
+//        for (int i = list.size()-1;i>=0;i--){
+//            if (list.get(i)== "cc" || list.get(i) == "bb") {
+//                list.remove(list.get(i));
+//            }
+//        }
+
+        // test1.2 无异常 使用迭代器增删，不直接操作集合list
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            if (next == "cc" || next == "bb") {
+                iterator.remove();
             }
         }
-
         System.out.println(list);
 
-//        //  test1 存在异常
+//        //  test2.1 存在异常
 //        for (String s : list) {
 //            if (s == "cc" || s == "bb") {
 //                list.remove(s);
 //            }
 //        }
-//        //  test 2 存在异常
+//        //  test2.2 存在异常
 //        Iterator<String> iterator = list.iterator();
 //        while (iterator.hasNext()){
 //            String next = iterator.next();
@@ -47,7 +55,7 @@ public class ListError {
 //                list.remove(next);
 //            }
 //        }
-//      //  test3 修改异常
+//      //  test2.3 存在异常
 //        for (String s : list) {
 //            if (s.equals("cc")) {
 //                list.add("ad");
