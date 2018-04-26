@@ -1,6 +1,6 @@
 package test.java.com.liuhe.practice;
 
-import main.java.com.liuhe.practice.SingleNode;
+import main.java.com.liuhe.practice.SingleLinkList;
 
 /**
  * 简单单向链表
@@ -10,14 +10,14 @@ import main.java.com.liuhe.practice.SingleNode;
  */
 public class SingleNodeTest {
     public static void main(String[] args) {
-        SingleNode singleNode = new SingleNode(2);
-        singleNode.appendToTail(3);
-        singleNode.appendToTail(4);
+        SingleLinkList singleLinkList = new SingleLinkList(2);
+        singleLinkList.appendToTail(3);
+        singleLinkList.appendToTail(4);
 
-        singleNode.printNodes(singleNode);
+        singleLinkList.printNodes(singleLinkList);
 
         System.out.println("-----------l h-----------");
-        SingleNode singleNode1 = singleNode.deleteNode(singleNode, 3);
-        singleNode.printNodes(singleNode1);
+        SingleLinkList singleLinkList1 = singleLinkList.deleteNode(singleLinkList, 3);
+        singleLinkList.printNodes(singleLinkList1);
     }
 }

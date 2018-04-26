@@ -6,12 +6,12 @@ package main.java.com.liuhe.practice;
  * @author liuhe
  * @create 2018-04-26
  */
-public class SingleNode {
+public class SingleLinkList {
 
-    SingleNode next = null;
+    SingleLinkList next = null;
     int data;
 
-    public SingleNode(int data) {
+    public SingleLinkList(int data) {
         this.data = data;
     }
 
@@ -21,16 +21,16 @@ public class SingleNode {
      * @param data 节点数据
      */
     public void appendToTail(int data) {
-        SingleNode end = new SingleNode(data);
-        SingleNode n = this;
+        SingleLinkList end = new SingleLinkList(data);
+        SingleLinkList n = this;
         while (null != n.next) {
             n = n.next;
         }
         n.next = end;
     }
 
-    public SingleNode deleteNode(SingleNode head, int data) {
-        SingleNode n = head;
+    public SingleLinkList deleteNode(SingleLinkList head, int data) {
+        SingleLinkList n = head;
 
         if (n.data == data) {
             // 表头指向下一个节点
@@ -48,12 +48,11 @@ public class SingleNode {
         return head;
     }
 
-    public void printNodes(SingleNode node) {
+    public void printNodes(SingleLinkList node) {
         while (null != node) {
             System.out.println(node.data);
             node = node.next;
         }
     }
-
 }
 
