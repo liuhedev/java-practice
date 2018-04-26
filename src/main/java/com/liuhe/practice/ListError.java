@@ -1,3 +1,5 @@
+package main.java.com.liuhe.practice;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.List;
  * @author liuhe
  * @date 2018/4/25
  */
-public class ListError {
+public class  ListError {
 
     public static void main(String[] args) {
 
