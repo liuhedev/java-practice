@@ -1,4 +1,4 @@
-package main.java.com.liuhe.practice;
+package com.lh.linkedlist;
 
 /**
  * 链表中的每个节点既指向前面一个节点，也指向后面一个节点，就像丢手绢游戏一样，每个人都手拉手。
@@ -38,18 +38,14 @@ public class DoubleLinkList {
         }
     }
 
-    boolean delete(int data) {
-        Node temp = find(data);
-
-    }
 
     public Node find(int data) {
         Node cur = header;
         while (null != cur) {
-            if (cur.data == data) {
+            if (data == cur.data) {
                 return cur;
             }
-            cur=cur.next;
+            cur = cur.next;
         }
         return null;
     }
@@ -62,11 +58,11 @@ public class DoubleLinkList {
         // 上一个
         Node pre;
         // 数据
-        Object data;
+        int data;
         // 下一个
         Node next;
 
-        public Node(Object data) {
+        public Node(int data) {
             this.data = data;
         }
     }

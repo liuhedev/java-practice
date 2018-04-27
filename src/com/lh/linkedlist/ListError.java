@@ -1,4 +1,4 @@
-package main.java.com.liuhe.practice;
+package com.lh.linkedlist;
 
 import java.util.ArrayList;
 import java.util.Iterator;

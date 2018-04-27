@@ -1,4 +1,4 @@
-package main.java.com.liuhe.practice;
+package com.lh.linkedlist;
 
 /**
  * 简单单向链表

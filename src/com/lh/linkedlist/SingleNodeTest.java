@@ -1,6 +1,5 @@
-package test.java.com.liuhe.practice;
+package com.lh.linkedlist;
 
-import main.java.com.liuhe.practice.SingleLinkList;
 
 /**
  * 简单单向链表
