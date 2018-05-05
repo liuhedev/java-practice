@@ -1,3 +1,6 @@
+package com.lh;
+
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -9,7 +12,10 @@ public class Main {
 //        cacheThreadPool();
 //        fixThreadPool();
 //        scheduleThreadPool();
-        singleThreadExecutor();
+//        singleThreadExecutor();
+        Function function = new Function();
+        function.test1();
+        function.test2();
     }
 
     /**
