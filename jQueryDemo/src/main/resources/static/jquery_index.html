@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery_DEMO</title>
+		<!--1.引入jQuery依赖库-->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script>
+			//1. 发起请求去获取省份的数据。 入口函数 ： 页面加载完毕就执行。
+			$(function() {
+				var url = "http://127.0.0.1:8080/provinces";
+				$.get(url, function(data) {
+					//data:其实就是一个json的集合数据，集合里面装的是 province对象-->
+					//遍历这个集合，遍历一次会执行一次function， 里面的i : 表示遍历的下标， n: 遍历出来的每一个元素-->
+					//在当前的场景下，它就是province对象-->
+					$(data).each(function(i, n) {
+						//遍历好了之后，就要往省份的下拉框追加。所以要先找到它
+						$("#province").append(" <option value='" + n.id + "'>" + n.name + "</option>");
+					});
+				})
+			})
+
+			//2、只要改变了省份的数据，那么就会执行这个方法。
+			function changeProvince() {
+				//必须得知道，现在选中什么省份。
+				var url = "http://127.0.0.1:8080/citys";
+				var id = $("#province").val();
+				//发送请求
+<!--				使用jquery-ajax方法，形式比较复杂，但是自由度更高一些-->
+				$.ajax({
+					url: url,
+					type:"post",//默认请求方式get
+					data: {
+						"provinceId": id
+					},
+					success: function(data) {
+						//追加之前，先清空内容-->
+						$("#city").html("<option>--请选择--</option>");
+						$(data).each(function(i, n) {
+							$("#city").append(" <option value='" + n.id + "'>" + n.name + "</option>");
+						});
+					},
+					error:function(data){
+						console.error(data)
+					}
+				})
+
+				<!--				$.post("citys", {-->
+				<!--					"provinceId": id-->
+				<!--				}, function(data) {-->
+				<!--					//追加之前，先清空内容-->
+				<!--					$("#city").html("<option>&#45;&#45;请选择&#45;&#45;</option>");-->
+				<!--					$(data).each(function(i, n) {-->
+				<!--						$("#city").append(" <option value='" + n.id + "'>" + n.name + "</option>");-->
+				<!--					});-->
+				<!--				});-->
+			}
+
+			// 获取监控数据
+			function getMobileEvData() {
+				var url = "https://cloud-api.sitechdev.com/vehicle/v1/mobile/homeStatistic?government=changshou";
+				$.get(url, function(data) {
+					console.log(data);
+					alert(data.data.government);
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<a href="javascript:getMobileEvData()">jQuery Demo</a><br />
+
+		<select id="province" onchange="changeProvince()">
+			<option value="">--请选择--</option>
+		</select>
+		城市:
+		<select id="city">
+			<option>--请选择--</option>
+		</select>
+	</body>
+</html>
