@@ -1,0 +1,5 @@
+db:
+  driverClass: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost/students
+  username: root
+  password: root
