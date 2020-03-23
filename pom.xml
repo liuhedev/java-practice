@@ -10,7 +10,8 @@
     <name>study-project</name>
     <description>study-project</description>
     <modules>
-        <module>jQueryDemo</module>
+        <module>jQueryModule</module>
+        <module>DBModule</module>
     </modules>
 
 </project>
