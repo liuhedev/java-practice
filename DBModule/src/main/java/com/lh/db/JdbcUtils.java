@@ -2,7 +2,10 @@ package com.lh.db;
 
 import com.mysql.jdbc.Driver;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.*;
+import java.util.Properties;
 
 /**
  * @author liuhe
@@ -18,6 +21,25 @@ public class JdbcUtils {
     static Connection connection = null;
     static ResultSet resultSet = null;
     static Statement statement = null;
+    static{
+        try {
+            //1. 创建一个属性配置对象
+            Properties properties = new Properties();
+            //使用类加载器，去读取src底下的资源文件。 后面在servlet
+			InputStream is = JdbcUtils.class.getClassLoader().getResourceAsStream("application.properties");
+            //导入输入流。
+            properties.load(is);
+
+            //读取属性
+            driverClass = properties.getProperty("driverClass");
+            url = properties.getProperty("url");
+            username = properties.getProperty("username");
+            password = properties.getProperty("password");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * 获取连接对象
@@ -27,7 +49,7 @@ public class JdbcUtils {
     public static Connection getConn() {
         Connection conn = null;
         try {
-
+            //1. 创建一个属性配置对象
             Class.forName(driverClass);
             //2. 建立连接 参数一： 协议 + 访问的数据库 ， 参数二： 用户名 ， 参数三： 密码。
             conn = DriverManager.getConnection(url, username, password);
