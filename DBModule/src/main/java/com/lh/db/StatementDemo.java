@@ -8,7 +8,7 @@ import java.sql.*;
  * @author liuhe
  * @date 2020/03/23
  */
-public class DBLauncher {
+public class StatementDemo {
 
     //协议 + 访问的数据库 ， 参数二： 用户名 ， 参数三： 密码。
     public static String url = "jdbc:mysql://localhost/students";
@@ -28,6 +28,7 @@ public class DBLauncher {
             statement = connection.createStatement();
             String sql = "select * from t_student";
             resultSet = statement.executeQuery(sql);
+
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");

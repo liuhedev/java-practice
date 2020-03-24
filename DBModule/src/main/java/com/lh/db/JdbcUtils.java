@@ -13,20 +13,21 @@ import java.util.Properties;
  */
 public class JdbcUtils {
 
-    static String driverClass = "com.mysql.jdbc.Driver";
-    static String url = "jdbc:mysql:///heima02";
-    static String username = "root";
-    static String password = "root";
+    static String driverClass = null;
+    static String url = null;
+    static String username = null;
+    static String password = null;
 
     static Connection connection = null;
     static ResultSet resultSet = null;
     static Statement statement = null;
-    static{
+
+    static {
         try {
             //1. 创建一个属性配置对象
             Properties properties = new Properties();
             //使用类加载器，去读取src底下的资源文件。 后面在servlet
-			InputStream is = JdbcUtils.class.getClassLoader().getResourceAsStream("application.properties");
+            InputStream is = JdbcUtils.class.getClassLoader().getResourceAsStream("application.properties");
             //导入输入流。
             properties.load(is);
 
