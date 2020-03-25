@@ -31,7 +31,7 @@
 
                 <configuration>
                     <!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.lh.MainApp</mainClass>
+                    <mainClass>com.lh.jquery.MainApp</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>

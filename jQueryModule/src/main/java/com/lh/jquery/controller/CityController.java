@@ -1,7 +1,7 @@
-package com.lh.controller;
+package com.lh.jquery.controller;
 
-import com.lh.bean.City;
-import com.lh.bean.Province;
+import com.lh.jquery.bean.City;
+import com.lh.jquery.bean.Province;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

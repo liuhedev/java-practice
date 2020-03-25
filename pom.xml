@@ -12,6 +12,7 @@
     <modules>
         <module>jQueryModule</module>
         <module>DBModule</module>
+        <module>TransactionModule</module>
     </modules>
 
 </project>

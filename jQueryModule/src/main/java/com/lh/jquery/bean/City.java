@@ -1,17 +1,14 @@
-package com.lh.bean;
+package com.lh.jquery.bean;
 
 /**
  * @author liuhe
  * @date 2020/03/17
  */
-public class Province {
+public class City {
+    private static final String TAG = "City";
 
-    private int id; //省份的编号
-    private String name; //名字
-
-    public Province() {
-    }
-
+    private int id;
+    private String name;
     public int getId() {
         return id;
     }
@@ -28,8 +25,11 @@ public class Province {
         this.name = name;
     }
 
-    public Province(int id, String name) {
+    public City(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public City() {
     }
 }
