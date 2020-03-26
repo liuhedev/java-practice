@@ -8,8 +8,8 @@ import javax.persistence.Id;
  * @author liuhe
  * @date 2020/03/26
  */
-@Entity(name = "t_student_auto")
-public class Student {
+@Entity(name = "t_teacher_auto")
+public class Teacher {
     private int id;
     private String name;
     private int age;
@@ -38,14 +38,5 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
     }
 }
