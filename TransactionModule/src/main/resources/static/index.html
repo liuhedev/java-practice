@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction</title>
+    <!--    引入jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+			var exceptionUrl = 'http://localhost:8080/transferException';
+			var normalUrl = 'http://localhost:8080/transferNormal';
+			var totalMoneyUrl = 'http://localhost:8080/totalMoney';
+
+			$(function() {
+				$.get(totalMoneyUrl, function(data, status) {
+					$("#totalMoney").html(data);
+				});
+			})
+
+			function transferException() {
+				$.get(exceptionUrl, function(data, status) {
+					$("#transferResult").html("转账结果："+data);
+				});
+				$.get(totalMoneyUrl, function(data, status) {
+					$("#totalMoney").html(data);
+				});
+			}
+
+			function transferNormal() {
+				$.get(normalUrl, function(data, status) {
+					$("#transferResult").html("转账结果："+data);
+				});
+				$.get(totalMoneyUrl, function(data, status) {
+					$("#totalMoney").html(data);
+				});
+			}
+
+    </script>
+</head>
+<body>
+<a href="javascript:transferException()">不使用事务转账</a><br/>
+<a href="javascript:transferNormal()">使用事务转账</a><br/>
+
+<span id="transferResult"></span>
+目前总钱数：<span id="totalMoney"></span>
+
+</body>
+</html>
