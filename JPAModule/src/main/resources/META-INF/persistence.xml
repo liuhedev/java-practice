@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <!--持久化单元，数据库 & 实体类 & 具体实现方式配置单元-->
+    <persistence-unit name="student">
+
+        <!--声明提供者，也就是说具体实现，因为JPA 只是规范，这里使用hibernate作为具体实现-->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!--表示实体类有哪些-->
+        <class>com.lh.jpa.bean.Student</class>
+
+        <!--数据库连接参数-->
+        <properties>
+            <!--使用jpa的配置-->
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/students?characterEncoding=utf8"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+
+            <!--表示自动建表-->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
