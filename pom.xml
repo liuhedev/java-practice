@@ -14,6 +14,7 @@
         <module>DBModule</module>
         <module>TransactionModule</module>
         <module>JPAModule</module>
+        <module>JPAModule-Basic</module>
     </modules>
 
 </project>

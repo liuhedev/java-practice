@@ -1,4 +1,4 @@
-package com.lh.jpa.bean;
+package com.lh.jpa.entity;
 
 import javax.persistence.*;
 

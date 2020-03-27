@@ -10,10 +10,10 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!--表示实体类有哪些-->
-        <class>com.lh.jpa.bean.Student</class>
-        <class>com.lh.jpa.bean.Teacher</class>
-        <class>com.lh.jpa.bean.Spu</class>
-        <class>com.lh.jpa.bean.Sku</class>
+        <class>com.lh.jpa.entity.Student</class>
+        <class>com.lh.jpa.entity.Teacher</class>
+        <class>com.lh.jpa.entity.Spu</class>
+        <class>com.lh.jpa.entity.Sku</class>
 
         <!--数据库连接参数-->
         <properties>
